@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Security Log Analyzer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Security Log Analyzer</h1>
+        <p class="subtitle">
+            Paste or upload log entries to flag suspicious activity and view possible risks.
+        </p>
+
+        <form method="POST" enctype="multipart/form-data">
+            <label for="log_text">Paste Log Entries:</label>
+            <textarea id="log_text" name="log_text" placeholder="Paste logs here...">{{ original_logs }}</textarea>
+
+            <label for="log_file">Or Upload a Log File:</label>
+            <input type="file" id="log_file" name="log_file" accept=".txt,.log">
+
+            <button type="submit">Analyze Logs</button>
+            <button type="button" onclick="clearForm()">Clear</button>
+        </form>
+
+        {% if results %}
+            <h2>Analysis Results</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Line</th>
+                        <th>Log Entry</th>
+                        <th>Risk</th>
+                        <th>Reason</th>
+                        <th>Suggested Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for result in results %}
+                    <tr class="{{ result.risk|lower }}">
+                        <td>{{ result.line_number }}</td>
+                        <td>{{ result.log_entry }}</td>
+                        <td>{{ result.risk }}</td>
+                        <td>{{ result.reason }}</td>
+                        <td>{{ result.action }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+
+        {% elif original_logs %}
+            <div class="safe-box">
+                No suspicious activity was found based on the current detection rules.
+            </div>
+        {% endif %}
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
