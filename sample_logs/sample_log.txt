@@ -1,0 +1,9 @@
+2026-04-30 08:15:22 INFO User john logged in successfully from 192.168.1.10
+2026-04-30 08:17:44 WARNING Disk space running low on server web-01
+2026-04-30 08:20:10 FAILED LOGIN for user admin from 45.33.21.99
+2026-04-30 08:20:35 Invalid password for user admin from 45.33.21.99
+2026-04-30 08:21:02 Multiple failed attempts detected from 45.33.21.99
+2026-04-30 08:22:15 Unauthorized access attempt to /etc/passwd
+2026-04-30 08:25:50 ERROR Database connection timeout
+2026-04-30 08:30:01 Root login attempted from 185.220.101.45
+2026-04-30 08:35:19 INFO User sarah logged out
