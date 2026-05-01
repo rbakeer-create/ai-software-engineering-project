@@ -1,58 +1,82 @@
 # AI Software Engineering Project
 
 ## Project Overview
-This project is a web-based application that demonstrates the use of AI as a primary collaborator across the Software Development Life Cycle (SDLC). The goal is to not only build a functional system, but to show how AI can be intentionally used, evaluated, and refined throughout development.
+This project is a Security Log Analyzer web application built using Python Flask. 
+The application allows users to paste or upload system log entries, automatically 
+detects suspicious activity, assigns risk levels (Low, Medium, High), and provides 
+explanations with suggested actions.
+
+The goal of this project is to demonstrate how AI can be used as a collaborator 
+throughout the Software Development Life Cycle (SDLC), including planning, 
+implementation, debugging, and refinement.
+
+---
 
 ## Features
-- [Describe what your app does]
-- [Example: Upload data / analyze input / generate output]
+- Paste log entries into a text input box
+- Upload log files (.txt)
+- Detect suspicious patterns such as:
+  - Failed login attempts
+  - Unauthorized access attempts
+  - Repeated login failures (possible brute-force attack)
+  - System errors
+- Assign risk levels (Low, Medium, High)
+- Provide explanations and suggested actions for each log entry
+
+---
 
 ## Architecture
-- Frontend: [HTML/CSS/React/etc.]
-- Backend: [Python Flask / Node.js]
-- AI Integration: [OpenAI / Claude / etc.]
+- **Frontend:** HTML, CSS, JavaScript  
+- **Backend:** Python Flask  
+- **Detection Logic:** Rule-based pattern matching (AI-assisted design)
+
+---
 
 ## AI Tools Used
-- ChatGPT: planning, debugging, iteration
-- [Add more if used]
+- **ChatGPT**
+  - Project planning and scope definition
+  - Code generation (Flask backend + frontend structure)
+  - Debugging errors
+  - Explaining logic and refining features
+
+---
 
 ## AI Interaction Evidence
+All screenshots of prompts, iterations, and results are included in the `/screenshots` folder in this repository.
 
-### Initial Prompt
-(Add screenshot here later)
-
-### Refinement
-(Add screenshot here later)
-
-### AI Failure Example
-(Add screenshot here later)
-
-### Final Output
-(Add screenshot here later)
+---
 
 ## AI Engineering Analysis
 
 ### What Worked
-- AI helped generate initial structure
-- Assisted in debugging
+- AI quickly generated a working Flask application structure
+- Helped implement detection logic and UI layout
+- Reduced development time significantly
 
 ### What Failed
-- AI produced incorrect logic in some cases
-- Required manual correction
+- Some instructions were unclear or incorrect (especially GitHub file handling)
+- Required manual troubleshooting and corrections
+- Needed multiple iterations to get working outputs
 
 ### Tradeoffs
-- Faster development vs reduced accuracy
+- Faster development speed vs occasional incorrect or confusing outputs  
+- Less manual coding vs more time spent validating AI responses  
+
+---
 
 ## Reflection
 
 ### What AI Improved
-- Speed of development
-- Idea generation
+- Accelerated development process
+- Helped generate ideas and structure quickly
+- Reduced time needed to write boilerplate code
 
 ### What AI Made Worse
-- Introduced errors
-- Required extra validation
+- Introduced errors that required debugging
+- Occasionally gave misleading or incomplete instructions
+- Required constant validation instead of blind trust
 
 ### What I Would Do Differently
-- Use more structured prompts
-- Validate earlier in the process
+- Use more structured and specific prompts earlier
+- Validate AI outputs step-by-step instead of all at once
+- Spend more time refining prompts to reduce errors
